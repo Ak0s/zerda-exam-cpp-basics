@@ -1,17 +1,28 @@
-#include <iostream>
+//============================================================================
+// Name        : 03.cpp
+// Author      : Ak0s
+// Description : Exam - task 3
+//============================================================================
 
+#include <iostream>
 using namespace std;
 
-/** 
- * Create a function that takes a pointer to a float and a float, then it should
- * multiply the value of the pointer with the given float and save the result
- * where the pointer points.
- * Please mutliply the total variable by 5 with it.
- */
+void multiplier(float* a, float b);
 
 int main() {
   float total = 123;
+  float* p_total = &total;
+  float multip_number;
+
+  cout << "The number you want to multiply with: ";
+  cin >> multip_number;
+
+  multiplier(p_total, multip_number);
+  cout << "After the multiplication 'total' is: " << total;
 
   return 0;
 }
 
+void multiplier(float* a, float b) {
+  *a = *a * b;
+}
